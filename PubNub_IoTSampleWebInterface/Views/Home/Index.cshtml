@@ -1,0 +1,26 @@
+﻿@model PubNub_IoTSampleWebInterface.Models.MessageModel
+@{
+    ViewBag.Title = "PubNub Service";
+}
+
+<div class="jumbotron">
+    <h1>Message Service</h1>
+    <p class="lead">This is a sample application to integrate with PubNub IoT services</p>
+</div>
+
+<div class="row">
+    <div class="jumbotron" style="background-color: transparent">
+        <h2>Getting started</h2>
+        <p>
+            Please enter a message to submit to PubNub (integrated with arduino project, type blink to start pin 7 led blink, to stop, type anything alse)
+        </p>
+        @using (Html.BeginForm())
+        {
+            <fieldset class="form-group" style="text-align: center">
+                <div>@Html.TextBoxFor(model => model.Message, new { Style = "width: 50%;position:relative;float:left", Class = "form-control"})<input style="position: relative; float: left; margin-left: 20px" class="btn btn-success" type="submit" value="Send" /></div>
+            </fieldset>
+        }
+
+    </div>
+    
+</div>
